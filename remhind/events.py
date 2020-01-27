@@ -323,6 +323,10 @@ class EventCollection:
                     self.db.add_alarm(
                         cal_obj['uid'], alarm_dt, dt, message, is_todo,
                         sequence)
+                elif summary:
+                    self.db.add_alarm(
+                        cal_obj['uid'], alarm_dt, dt, summary, is_todo,
+                        sequence)
 
             if summary:
                 self.db.add_alarm(
