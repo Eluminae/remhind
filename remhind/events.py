@@ -179,7 +179,7 @@ class SQLiteDB:
         cursor.execute("""
             SELECT id, event, message, date, due_date
             FROM alarms
-            WHERE (date >= ?) AND (date < ?) AND (vtodo = 0)
+            WHERE (due_date >= ?) AND (date < ?) AND (vtodo = 0)
             """, (start, end))
         return [Alarm(*r) for r in cursor.fetchall()]
 
